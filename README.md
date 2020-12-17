@@ -4,7 +4,7 @@
 ```
 git clone https://github.com/Harmoware/Harmoware-VIS-gsivectortile.git
 
-cd Harmoware-VIS-Demo
+cd Harmoware-VIS-gsivectortile
 
 npm install
 
