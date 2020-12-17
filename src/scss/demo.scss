@@ -1,4 +1,11 @@
 @import 'harmoware-vis/scss/harmoware.scss';
 body {
+  color: black;
   background: white;
+  a {
+    color: black;
+  }
+  a:hover {
+    color: black;
+  }
 }
