@@ -1,0 +1,29 @@
+{
+  "name": "harmoware-demo",
+  "version": "1.0.0",
+  "description": "harmoware-demo",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --port 3030 --open --mode development",
+    "build": "webpack --mode production"
+  },
+  "author": "harmoware-demo",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/core": "^7.12.3",
+    "@babel/preset-react": "^7.12.5",
+    "babel-loader": "^8.1.0",
+    "css-loader": "^5.0.1",
+    "harmoware-vis": "^1.6.30",
+    "node-sass": "^4.14.1",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-redux": "^7.2.2",
+    "redux": "^4.0.5",
+    "sass-loader": "^10.0.5",
+    "style-loader": "^2.0.0",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^4.2.0",
+    "webpack-dev-server": "^3.11.0"
+  }
+}
