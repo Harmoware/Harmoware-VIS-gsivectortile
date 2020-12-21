@@ -9,3 +9,81 @@ body {
     color: black;
   }
 }
+
+div.demo_input_button_column0 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  label {
+    @extend .demo_button0;
+    input[type="file"] {
+      display: none;
+    }
+  }
+  div {
+    white-space: nowrap;
+    overflow: hidden;
+    text-Overflow: ellipsis;
+  }
+}
+
+label.demo_button0,
+button.demo_button0 {
+  background: darkred;
+  border-radius: 2px;
+  color: white;
+  cursor: pointer;
+  font-size: 12px;
+  letter-spacing: .026em;
+  line-height: 14px;
+  padding: 3px 12px;
+  text-align: center;
+  transition: all .2s ease;
+  vertical-align: middle;
+  border-width: 0px;
+  box-shadow: 1px 1px 1px dimgray;
+  white-space: nowrap;
+  margin: 0px 2px;
+  &:hover {
+    background: red;
+  }
+}
+
+div.demo_input_button_column1 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  label {
+    @extend .demo_button1;
+    input[type="file"] {
+      display: none;
+    }
+  }
+  div {
+    white-space: nowrap;
+    overflow: hidden;
+    text-Overflow: ellipsis;
+  }
+}
+
+label.demo_button1,
+button.demo_button1 {
+  background: navy;
+  border-radius: 2px;
+  color: white;
+  cursor: pointer;
+  font-size: 12px;
+  letter-spacing: .026em;
+  line-height: 14px;
+  padding: 3px 12px;
+  text-align: center;
+  transition: all .2s ease;
+  vertical-align: middle;
+  border-width: 0px;
+  box-shadow: 1px 1px 1px dimgray;
+  white-space: nowrap;
+  margin: 0px 2px;
+  &:hover {
+    background: blue;
+  }
+}

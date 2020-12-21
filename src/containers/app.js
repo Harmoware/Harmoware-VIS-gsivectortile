@@ -3,25 +3,54 @@ import {
   Container, connectToHarmowareVis, HarmoVisLayers, MovesLayer, MovesInput
 } from 'harmoware-vis';
 
-const MAPSTYLE = '../../json/std.json'
+const MAPSTYLE1 = '../../json/std.json'
+const MAPSTYLE2 = '../../json/std_vertical.json'
+const MAPSTYLE3 = '../../json/pale.json'
+const MAPSTYLE4 = '../../json/blank.json'
+
+const BUTTONSTYLE = ['demo_input_button_column0','demo_input_button_column1','demo_input_button_column0','demo_input_button_column1'];
 
 class App extends Container {
+  constructor(props) {
+    super(props);
+    this.state = {
+      mapStyle: MAPSTYLE1,
+      selectedIndex: 0
+    };
+  }
+
+  getIconCubeTypeSelected(e) {
+    this.setState({ iconCubeType: +e.target.value });
+  }
+
   render() {
     const { actions, clickedObject, inputFileName, viewport,
       routePaths, movesbase, movedData } = this.props;
     const { movesFileName } = inputFileName;
     const optionVisible = false;
+    const {mapStyle, selectedIndex} = this.state;
 
     return (
       <div>
         <div className="harmovis_controller">
-          <ul className="flex_list">
+          <ul className="flex_list list-group">
             <li className="flex_row">
-              <div className="harmovis_input_button_column">
+              <div className={BUTTONSTYLE[selectedIndex]}>
               <label htmlFor="MovesInput">
-                Operation data<MovesInput actions={actions} id="MovesInput" />
+                Operation data<MovesInput actions={actions} id="MovesInput"/>
               </label>
-              <div>{movesFileName}</div>
+              <div>{movesFileName || 'Not selected'}</div>
+              </div>
+            </li>
+            <li>
+              <div className="form-select">
+                <label htmlFor="MapSelect" className="form-select-label">Map Select</label>
+                <select id="MapSelect" value={mapStyle} onChange={(e)=>this.setState({ mapStyle: e.target.value, selectedIndex: e.target.selectedIndex })} >
+                <option value={MAPSTYLE1}>Standard Map</option>
+                <option value={MAPSTYLE2}>Standard Vertical Map</option>
+                <option value={MAPSTYLE3}>Pale Color Map</option>
+                <option value={MAPSTYLE4}>White Map</option>
+                </select>
               </div>
             </li>
           </ul>
@@ -30,7 +59,8 @@ class App extends Container {
           <HarmoVisLayers
             viewport={viewport} actions={actions}
             mapboxApiAccessToken=''
-            mapStyle={MAPSTYLE}
+            mapboxAddLayerValue=''
+            mapStyle={mapStyle}
             layers={[
               new MovesLayer({ routePaths, movesbase, movedData,
                 clickedObject, actions, optionVisible }),
