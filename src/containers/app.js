@@ -19,7 +19,7 @@ class App extends Container {
     };
   }
 
-  getIconCubeTypeSelected(e) {
+  getMapSelected(e) {
     this.setState({ mapStyle: e.target.value, selectedIndex: e.target.selectedIndex });
     let element = document.getElementsByTagName('body');
     if(element[0].className!==""){element[0].className="";}else{element[0].className="bodyclass"}
@@ -47,7 +47,7 @@ class App extends Container {
             <li>
               <div className="form-select">
                 <label htmlFor="MapSelect" className="form-select-label">Map Select</label>
-                <select id="MapSelect" value={mapStyle} onChange={this.getIconCubeTypeSelected.bind(this)} >
+                <select id="MapSelect" value={mapStyle} onChange={this.getMapSelected.bind(this)} >
                 <option value={MAPSTYLE1}>Standard Map</option>
                 <option value={MAPSTYLE2}>Standard Vertical Map</option>
                 <option value={MAPSTYLE3}>Pale Color Map</option>
