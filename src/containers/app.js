@@ -8,7 +8,7 @@ const MAPSTYLE2 = '../../json/std_vertical.json'
 const MAPSTYLE3 = '../../json/pale.json'
 const MAPSTYLE4 = '../../json/blank.json'
 
-const BUTTONSTYLE = ['demo_input_button_column0','demo_input_button_column1','demo_input_button_column0','demo_input_button_column1'];
+const LABELSTYLE = ['label_red','label_blue','label_red','label_blue'];
 
 class App extends Container {
   constructor(props) {
@@ -22,7 +22,7 @@ class App extends Container {
   getMapSelected(e) {
     this.setState({ mapStyle: e.target.value, selectedIndex: e.target.selectedIndex });
     let element = document.getElementsByTagName('body');
-    if(element[0].className!==""){element[0].className="";}else{element[0].className="bodyclass"}
+    if(element[0].className!==""){element[0].className="";}else{element[0].className="body_linen"}
   }
 
   render() {
@@ -37,8 +37,8 @@ class App extends Container {
         <div className="harmovis_controller">
           <ul className="flex_list list-group">
             <li className="flex_row">
-              <div className={BUTTONSTYLE[selectedIndex]}>
-              <label htmlFor="MovesInput">
+              <div className='harmovis_input_button_column'>
+              <label htmlFor="MovesInput" className={LABELSTYLE[selectedIndex]}>
                 Operation data<MovesInput actions={actions} id="MovesInput"/>
               </label>
               <div>{movesFileName || 'Not selected'}</div>
