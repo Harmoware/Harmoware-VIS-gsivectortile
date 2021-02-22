@@ -3,6 +3,9 @@ import {
   Container, connectToHarmowareVis, HarmoVisLayers, MovesLayer, MovesInput
 } from 'harmoware-vis';
 
+//react-map-gl@6で依存するmapbox-gl@2でmapboxApiAccessTokenが必須設定に変更
+const MAPBOX_TOKEN = process.env.MAPBOX_ACCESS_TOKEN;
+
 const MAPSTYLE1 = '../../json/std.json'
 const MAPSTYLE2 = '../../json/std_vertical.json'
 const MAPSTYLE3 = '../../json/pale.json'
@@ -60,7 +63,7 @@ class App extends Container {
         <div className="harmovis_area">
           <HarmoVisLayers
             viewport={viewport} actions={actions}
-            mapboxApiAccessToken=''
+            mapboxApiAccessToken={MAPBOX_TOKEN}
             mapboxAddLayerValue=''
             mapStyle={mapStyle}
             layers={[
