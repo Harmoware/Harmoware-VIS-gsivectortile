@@ -3,12 +3,12 @@ import {
   Container, connectToHarmowareVis, HarmoVisLayers, MovesLayer, MovesInput
 } from 'harmoware-vis';
 
-const MAPBOX_TOKEN = process.env.MAPBOX_ACCESS_TOKEN;
+const MAPBOX_TOKEN = process.env.MAPBOX_ACCESS_TOKEN || 'pk.eyJ1IjoieW11Y3lzdGsiLCJhIjoiY2oxdmhhbmd0MDAwYjM4bXd1YWVodWNrcCJ9.aWxoDc0UXMVGB96b82GFKQ'; //Acquire Mapbox accesstoken
 
-const MAPSTYLE1 = '../../json/std.json'
-const MAPSTYLE2 = '../../json/std_vertical.json'
-const MAPSTYLE3 = '../../json/pale.json'
-const MAPSTYLE4 = '../../json/blank.json'
+const MAPSTYLE1 = 'json/std.json'
+const MAPSTYLE2 = 'json/std_vertical.json'
+const MAPSTYLE3 = 'json/pale.json'
+const MAPSTYLE4 = 'json/blank.json'
 
 const LABELSTYLE = ['label_red','label_blue','label_red','label_blue'];
 
